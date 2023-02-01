@@ -11,5 +11,5 @@
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "exclude": ["./node_moules/**", "./babel.config.js"]
+  "exclude": ["./node_moules/**", "./babel.config.js", "**/__tests__/*.test.ts"]
 }
