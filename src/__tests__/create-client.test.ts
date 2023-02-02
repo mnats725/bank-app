@@ -16,6 +16,8 @@ describe("createClient", () => {
   });
 
   test("Проверка функции createClient на отрицательный баланс", () => {
-    expect(createClient("Mnats", -100)).toEqual({ name: "Mnats", balance: 100 });
+    expect(() => {
+      createClient("Mnats", 200);
+    }).toThrow("Вы ввели отрицательный баланс");
   });
 });
