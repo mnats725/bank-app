@@ -17,7 +17,7 @@ describe("createClient", () => {
 
   test("Проверка функции createClient на отрицательный баланс", () => {
     expect(() => {
-      createClient("Mnats", 200);
+      createClient("Mnats", -200);
     }).toThrow("Вы ввели отрицательный баланс");
   });
 });
