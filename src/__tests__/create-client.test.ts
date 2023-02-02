@@ -1,4 +1,4 @@
-import { createClient } from "../utils/createClient";
+import { createClient } from "../utils/create-client";
 
 describe("createClient", () => {
   test("Проверка функции createClient на коректность выполнения", () => {
