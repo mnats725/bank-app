@@ -15,9 +15,7 @@ describe("createClient", () => {
     }).toThrow("Вы ввели пустое поле имени");
   });
 
-  test("Проверка функции createClient на отрицательный баланс", () => {
-    expect(() => {
-      createClient("Mnats", -200);
-    }).toThrow("Вы ввели отрицательный баланс");
+  test("Проверка функции createClient на создание дефолтного значения при отрицательном балансе", () => {
+    expect(createClient("Mnats", -1)).toEqual({ name: "Mnats", balance: 0 });
   });
 });
