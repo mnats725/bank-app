@@ -3,5 +3,9 @@ export const createClient = (name: string, balance: number = 0) => {
     throw new Error("Вы ввели пустое поле имени");
   }
 
-  return { name, balance: 0 };
+  if (balance < 0) {
+    return { name, balance: 0 };
+  }
+
+  return { name, balance };
 };
