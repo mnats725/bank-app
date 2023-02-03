@@ -5,7 +5,7 @@ describe("createBank", () => {
   test("Проверка функции createBank на коректность выполнения", () => {
     expect(createBank("Сбербанк", [createClient("Mnats", 7777)])).toMatchObject({
       bankName: "Сбербанк",
-      clients: ["Mnats", 7777],
+      clients: [{ name: "Mnats", balance: 7777 }],
     });
   });
 
