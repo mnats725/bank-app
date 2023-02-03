@@ -1,10 +1,11 @@
 import { createBank } from "../utils/create-bank";
+import { createClient } from "../utils/create-client";
 
 describe("createBank", () => {
   test("Проверка функции createBank на коректность выполнения", () => {
-    expect(createBank("Сбербанк", [{ name: "Mnats", balance: 5000 }])).toMatchObject({
+    expect(createBank("Сбербанк", [createClient("Mnats", 7777)])).toMatchObject({
       bankName: "Сбербанк",
-      clients: [{ name: "Mnats", balance: 5000 }],
+      clients: ["Mnats", 7777],
     });
   });
 
