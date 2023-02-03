@@ -2,7 +2,6 @@ import { createBank } from "../utils/create-bank";
 import { createClient } from "../utils/create-client";
 
 describe("createBank", () => {
-  const withoutClients = [];
   const clients = Array.from({ length: 5 }, (_, index) => createClient(`name ${index}`, 100 + index));
 
   test("Проверка функции createBank на коректность выполнения", () => {
@@ -18,7 +17,7 @@ describe("createBank", () => {
     }).toThrow("Имя банка не может быть пустым!");
 
     expect(() => {
-      createBank("", withoutClients);
+      createBank("", []);
     }).toThrow("Имя банка не может быть пустым!");
   });
 
