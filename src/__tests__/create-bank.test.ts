@@ -1,10 +1,9 @@
 import { createBank } from "../utils/create-bank";
 import { createClient } from "../utils/create-client";
 
-const clients = Array.from({ length: 5 }, (_, index) => createClient(`name ${index}`, 100));
-
 describe("createBank", () => {
   test("Проверка функции createBank на коректность выполнения", () => {
+    const clients = Array.from({ length: 5 }, (_, index) => createClient(`name ${index}`, 100 + index));
     expect(createBank("Сбербанк", clients)).toMatchObject({
       bankName: "Сбербанк",
       clients: clients,
