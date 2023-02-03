@@ -25,13 +25,15 @@ describe("createBank", () => {
     }).toThrow("Имя банка не может быть пустым!");
   });
 
-  test("Проверка функции createBank на пустой список клиентов", () => {
-    expect(createBank("Сбербанк", [])).toMatchObject({
+  test("Проверка функции createBank на отсутвующий список клиентов", () => {
+    expect(createBank("Сбербанк")).toMatchObject({
       bankName: "Сбербанк",
       clients: [],
     });
+  });
 
-    expect(createBank("Сбербанк")).toMatchObject({
+  test("Проверка функции createBank на пустой список клиентов", () => {
+    expect(createBank("Сбербанк", [])).toMatchObject({
       bankName: "Сбербанк",
       clients: [],
     });
