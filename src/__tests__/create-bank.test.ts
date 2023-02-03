@@ -15,6 +15,10 @@ describe("createBank", () => {
     expect(() => {
       createBank("");
     }).toThrow("Имя банка не может быть пустым!");
+
+    expect(() => {
+      createBank("", clients);
+    }).toThrow("Имя банка не может быть пустым!");
   });
 
   test("Проверка функции createBank на пустое значение параметра клиента", () => {
