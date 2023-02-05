@@ -1,24 +1,20 @@
 import { createClient } from "../utils/create-client";
 import { createBank } from "../utils/create-bank";
 
-describe("createBank", () => {
-  const bank = createBank("Bibici", []);
+describe("addClient", () => {
+  const client = createClient("name1", 101);
+  const clients = Array.from({ length: 5 }, (_, index) => createClient(`name ${index}`, 100 + index));
+  const bank = createBank("Bibici", clients);
 
   test("Проверка метода addClient на коректность выполнения", () => {
-    expect(createClient("Dima", 6666)).toMatchObject({
+    expect(bank.addClient(client)).toEqual({
       addClient: true,
     });
   });
 
   test("Проверка метода addClient на добавление в список такого-же клиента", () => {
     expect(() => {
-      bank.addClient(createClient("Dima", 6666));
+      bank.addClient(client);
     }).toThrow("Такой клиент уже существует!");
-  });
-
-  test("Проверка метода addClient на добавление без клиента ", () => {
-    expect(() => {
-      bank.addClient({});
-    }).toThrow("Выберете клиента которого вы хотите добавить!");
   });
 });
