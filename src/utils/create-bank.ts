@@ -8,10 +8,10 @@ export const createBank = (bankName: string, clients: Client[] = []) => {
   return {
     bankName,
     clients,
-    addClient: function (client: string) {
+    addClient: function (client: object) {
       return true;
     },
-    removeClient: function (client: string) {
+    removeClient: function (client: object) {
       return true;
     },
   };
