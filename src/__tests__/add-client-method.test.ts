@@ -8,9 +8,7 @@ describe("addClient", () => {
 
   test("Проверка метода addClient на коректность выполнения", () => {
     expect(bank.addClient(createClient("Dima", 101))).toEqual(true);
-    expect(bank.clients).toMatchObject({
-      clients: ["Dima", 101],
-    });
+    expect(bank.clients).toMatchObject(["Dima", 101]);
   });
 
   test("Проверка метода addClient на добавление в список такого-же клиента", () => {
