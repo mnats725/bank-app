@@ -7,9 +7,7 @@ describe("addClient", () => {
   const bank = createBank("Bibici", clients);
 
   test("Проверка метода addClient на коректность выполнения", () => {
-    expect(bank.addClient(client)).toEqual({
-      addClient: true,
-    });
+    expect(bank.addClient(client)).toEqual(true);
   });
 
   test("Проверка метода addClient на добавление в список такого-же клиента", () => {
